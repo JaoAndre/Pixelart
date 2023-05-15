@@ -48,7 +48,7 @@ function drawPixel(pixelX, pixelY, drawColor) {
   pixelY = Math.floor(pixelY / pixelSize) * pixelSize;
 
   if (isErasing) {
-    context.fillStyle =canvasColor[(pixelX / pixelSize + pixelY / pixelSize) % canvasColor.length];
+    context.fillStyle = canvasColor[(pixelX / pixelSize + pixelY / pixelSize) % canvasColor.length];
   } else {
     context.fillStyle = drawColor;
   }
@@ -62,6 +62,18 @@ function switchMode() {
 
   modeButton.innerHTML = isErasing ? "Lápis" : "Borracha";
   context.fillStyle = isErasing ? "#FFFFFF" : "#000000";
+}
+
+// Função para baixar a pixel art.
+function downloadImage() {
+  const image = new Image();
+  image.src = canvas.toDataURL();
+
+  const link = document.createElement("a");
+  link.href = image.src;
+  link.download = "Pixel Art";
+
+  link.dispatchEvent(new MouseEvent("click"));
 }
 
 // Inicialização.
