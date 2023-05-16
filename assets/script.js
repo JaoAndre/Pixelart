@@ -2,13 +2,14 @@
 const canvas = document.getElementById("canvas");
 const modeButton = document.getElementById("modeButton");
 const colorPicker = document.getElementById("colorPicker");
+const pixelartName = document.getElementById("pixelartName");
 
 // Contexto 2D do canvas.
 const context = canvas.getContext("2d");
 
 // Largura e altura do canvas.
-const canvasWidth = 600;
-const canvasHeight = 600;
+const canvasWidth = 800;
+const canvasHeight = 800;
 
 canvas.width = canvasWidth;
 canvas.height = canvasHeight;
@@ -71,7 +72,7 @@ function downloadImage() {
 
   const link = document.createElement("a");
   link.href = image.src;
-  link.download = "Pixel Art";
+  link.download = pixelartName.value;
 
   link.dispatchEvent(new MouseEvent("click"));
 }

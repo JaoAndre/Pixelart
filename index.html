@@ -10,12 +10,18 @@
 </head>
 
 <body>
-    <canvas id="canvas"></canvas>
-    <div class="toolsbox">
-        <button id="modeButton" onclick="switchMode()">Borracha</button>
-        <button onclick="drawCanvas()">Reiniciar</button>
-        <button onclick="downloadImage()">Download</button>
-        <input type="color" id="colorPicker">
+    <div class="wrapper">
+        <canvas id="canvas"></canvas>
+        <div class="toolsbox">
+            <input type="text" id="pixelartName" value="Pixel Art Name">
+            <p>Com a delicadeza de um artesão e a visão de um sonhador, você dá vida aos seus pensamentos e emoções, transformando-os em uma tapeçaria pixelizada repleta de significado.</p>
+            <div class="buttons">
+                <button id="modeButton" onclick="switchMode()">Borracha</button>
+                <button onclick="drawCanvas()">Limpar</button>
+                <button onclick="downloadImage()">Baixar</button>
+            </div>
+            <input type="color" id="colorPicker">
+        </div>
     </div>
 
     <script src="assets/script.js"></script>
